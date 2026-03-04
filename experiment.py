@@ -9,13 +9,13 @@ import torch
 from transformers import EsmTokenizer, EsmModel
 from sklearn.model_selection import train_test_split
 
-from .config import Config
-from .data_processing import KinaseDataProcessor
-from .diffuser_wrapper import KinaseDiffuser
-from .meta_adv_finetune import MetaDiffusionFineTuner, AdversarialDiffusionFineTuner
-from .models import KinaseClassifier
-from .trainer import simple_train_test, KinaseTrainer
-from .sample_selector import SampleSelector
+from config import Config
+from data_processing import KinaseDataProcessor
+from diffuser_wrapper import KinaseDiffuser
+from meta_adv_finetune import MetaDiffusionFineTuner, AdversarialDiffusionFineTuner
+from models import KinaseClassifier
+from trainer import simple_train_test, KinaseTrainer
+from sample_selector import SampleSelector
 
 warnings.filterwarnings("ignore", message="The `max_length` parameter has no effect after initialization")
 
@@ -242,7 +242,7 @@ def run_experiment(rare_kinase_csv):
             initial_pos_weight = calculate_pos_weight(balanced_labels)
 
             from torch.utils.data import DataLoader
-            from .dataset import KinaseDataset
+            from dataset import KinaseDataset
 
             # 正确的初始化代码
             initial_train_loader = DataLoader(
