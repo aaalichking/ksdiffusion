@@ -16,14 +16,23 @@ Project Structure
 
 ksdiffusion/
 ├── main.py                   # Main entry point; loops through datasets and aggregates reports
+
 ├── experiment.py             # Core experiment pipeline for a single dataset
+
 ├── config.py                 # Global configurations (hyperparameters, paths, hardware device)
+
 ├── dataset.py                # Dataset definitions (Dataset) and batch processing logic
+
 ├── models.py                 # Core network components (ESM Classifier, DiTBlock, Conditional DiT)
+
 ├── diffusion.py              # Diffusion processes (noise addition, denoising, and cosine scheduling)
+
 ├── diffuser_wrapper.py       # High-level wrapper for the diffusion model, handling ESM encoding & decoding
+
 ├── trainer.py                # Classifier training module (includes early stopping and metric calculations)
+
 ├── meta_adv_finetune.py      # Meta-learning and adversarial fine-tuning modules for the diffusion model
+
 └── sample_selector.py        # Evaluation and smart filtering of augmented samples (clustering & scoring)
 
 🛠️ Requirements
