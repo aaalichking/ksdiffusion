@@ -13,6 +13,7 @@ Smart Sample Selection: Integrates KMeans clustering, diversity scoring, and cla
 Automated Data Augmentation Pipeline: Automatically executes multi-gradient data augmentation (10%, 20%, 30%) and balanced resampling, outputting comprehensive cross-validation comparison reports with detailed metrics (AUC, ACC, F1, PR AUC, etc.).
 
 Project Structure
+
 ksdiffusion/
 ├── main.py                   # Main entry point; loops through datasets and aggregates reports
 ├── experiment.py             # Core experiment pipeline for a single dataset
