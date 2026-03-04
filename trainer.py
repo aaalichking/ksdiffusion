@@ -18,7 +18,7 @@ from sklearn.metrics import (
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-from .dataset import KinaseDataset
+from dataset import KinaseDataset
 import copy
 
 
@@ -305,7 +305,7 @@ class KinaseTrainer:
 
 
 def cross_validate_train(config, model, tokenizer, train_val_df, test_df, pos_weight, n_folds=5):
-    from .dataset import KinaseDataset
+    from dataset import KinaseDataset
 
     dataset = KinaseDataset(train_val_df, tokenizer, config.max_length)
     labels = train_val_df['label'].values
@@ -387,7 +387,7 @@ def cross_validate_train(config, model, tokenizer, train_val_df, test_df, pos_we
 
 
 def simple_train_test(config, model, tokenizer, train_df, val_df, test_df, pos_weight, weighted_sampling=False):
-    from .dataset import KinaseDataset
+    from dataset import KinaseDataset
 
     if weighted_sampling:
         train_df = train_df.copy()
