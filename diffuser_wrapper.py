@@ -2,8 +2,8 @@ import os
 import torch
 from transformers import EsmTokenizer, EsmModel
 
-from .diffusion import DiffusionProcess
-from .models import ConditionalProteinDiT
+from diffusion import DiffusionProcess
+from models import ConditionalProteinDiT
 
 
 class KinaseDiffuser:
