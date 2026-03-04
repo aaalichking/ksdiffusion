@@ -2,7 +2,7 @@ import glob
 import os
 import pandas as pd
 
-from .experiment import run_experiment
+from experiment import run_experiment
 
 
 def main():
