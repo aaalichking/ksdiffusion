@@ -241,31 +241,10 @@ def run_experiment(rare_kinase_csv):
             balanced_labels = balanced_train['label'].values
             initial_pos_weight = calculate_pos_weight(balanced_labels)
 
-            initial_train_loader = torch.utils.data.DataLoader(
-                from balanced_low6.dataset import KinaseDataset  # 注意：实际使用时请把这一行拆成两步导入
-            )
-            # 上面一行原代码在拆分时不方便直接嵌入 DataLoader，这里做一个简化说明：
-            # 你可以像 trainer.simple_train_test 中那样，重新创建 DataLoader：
-            # initial_train_loader = DataLoader(
-            #     KinaseDataset(balanced_train, tokenizer, config.max_length),
-            #     batch_size=config.classifier_batch_size,
-            #     shuffle=True,
-            #     num_workers=4,
-            #     pin_memory=True,
-            #     drop_last=True
-            # )
-            # initial_val_loader = DataLoader(
-            #     KinaseDataset(datasets['val'], tokenizer, config.max_length),
-            #     batch_size=config.classifier_batch_size,
-            #     shuffle=False,
-            #     num_workers=4,
-            #     pin_memory=True,
-            #     drop_last=False
-            # )
-
             from torch.utils.data import DataLoader
             from .dataset import KinaseDataset
 
+            # 正确的初始化代码
             initial_train_loader = DataLoader(
                 KinaseDataset(balanced_train, tokenizer, config.max_length),
                 batch_size=config.classifier_batch_size,
