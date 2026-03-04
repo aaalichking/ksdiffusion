@@ -16,7 +16,6 @@ Project Structure
 
 ksdiffusion/
 ├── main.py                   # Main entry point; loops through datasets and aggregates reports
-
 ├── experiment.py             # Core experiment pipeline for a single dataset
 
 ├── config.py                 # Global configurations (hyperparameters, paths, hardware device)
